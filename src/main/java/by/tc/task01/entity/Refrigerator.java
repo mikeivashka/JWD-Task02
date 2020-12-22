@@ -4,10 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @Data
 @Builder
-public class Refrigerator extends Appliance{
+public class Refrigerator implements Appliance{
     private int powerConsumption;
     private double freezerCapacity;
     private double overallCapacity;

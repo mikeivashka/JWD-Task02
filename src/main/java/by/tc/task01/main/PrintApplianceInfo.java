@@ -5,6 +5,7 @@ import lombok.extern.java.Log;
 
 @Log
 public class PrintApplianceInfo {
+
     private PrintApplianceInfo() {}
 
     public static void print(Appliance appliance) {

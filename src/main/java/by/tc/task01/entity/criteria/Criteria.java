@@ -6,8 +6,9 @@ import java.util.Set;
 
 public class Criteria {
 
-    private String groupSearchName;
-    private Map<String, Object> criteria = new HashMap<>();
+    private final String groupSearchName;
+
+    private final Map<String, Object> criteriaMap = new HashMap<>();
 
     public Criteria(String groupSearchName) {
         this.groupSearchName = groupSearchName;
@@ -18,15 +19,19 @@ public class Criteria {
     }
 
     public void add(String searchCriteria, Object value) {
-        criteria.put(searchCriteria, value);
+        criteriaMap.put(searchCriteria, value);
     }
 
     public Set<String> getUsedSearchCriteria() {
-        return criteria.keySet();
+        return criteriaMap.keySet();
+    }
+
+    public Set<Map.Entry<String, Object>> entrySet() {
+        return criteriaMap.entrySet();
     }
 
     public Object get(String key) {
-        return criteria.get(key);
+        return criteriaMap.get(key);
     }
 
 }

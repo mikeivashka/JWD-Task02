@@ -4,10 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @Data
 @Builder
-public class TabletPC extends Appliance {
+public class TabletPC implements Appliance {
     private double batteryCapacity;
     private double memoryRom;
     private double displayInches;

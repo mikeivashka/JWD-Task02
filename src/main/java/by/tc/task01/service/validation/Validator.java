@@ -11,15 +11,16 @@ import java.util.Optional;
 
 public class Validator {
 
-    private Validator (){}
+    private Validator() {
+    }
 
     public static boolean criteriaValidator(Criteria criteria) {
         Optional<ApplianceType> targetType = Arrays.stream(ApplianceType.values())
                 .filter(t -> t.getClassName().equalsIgnoreCase(criteria.getGroupSearchName()))
                 .findFirst();
-        if (!targetType.isPresent()) return false;
+        if (targetType.isEmpty()) return false;
         List<String> allowedCriteria = new ArrayList<>();
-        SearchCriteriaFactory.getAllowedValues(targetType.get().getClassName())
+        SearchCriteriaFactory.getAllowedSearchCriteria(ApplianceType.valueOf(targetType.get().toString()))
                 .forEach(v -> allowedCriteria.add(v.toString()));
         return allowedCriteria.containsAll(criteria.getUsedSearchCriteria());
     }

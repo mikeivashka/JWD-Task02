@@ -4,10 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @Data
 @Builder
-public class VacuumCleaner extends Appliance{
+public class VacuumCleaner implements Appliance{
     private String filterType;
     private String bagType;
     private String wandType;

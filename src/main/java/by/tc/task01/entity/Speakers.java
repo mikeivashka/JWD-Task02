@@ -4,10 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @Data
 @Builder
-public class Speakers extends Appliance{
+public class Speakers implements Appliance{
     private double powerConsumption;
     private double numberOfSpeakers;
     private String frequencyRange;
